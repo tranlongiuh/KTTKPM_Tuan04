@@ -10,4 +10,6 @@ public class QuanLyChuyenBayApplication {
 		SpringApplication.run(QuanLyChuyenBayApplication.class, args);
 	}
 
+	
+
 }

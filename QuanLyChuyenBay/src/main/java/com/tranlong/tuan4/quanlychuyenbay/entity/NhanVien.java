@@ -15,17 +15,17 @@ import javax.persistence.JoinColumn;
 public class NhanVien {
 
 	@Id
-	@Column(name = "MaNV", nullable = false)
+	@Column(name = "ma_nv", nullable = false)
 	private String ma;
 
-	@Column(name = "Ten")
+	@Column(name = "ten")
 	private String ten;
 
-	@Column(name = "Luong")
+	@Column(name = "luong")
 	private Integer luong;
 
 	@ManyToMany
-	@JoinTable(name = "chungnhan", joinColumns = @JoinColumn(name = "MaNV"), inverseJoinColumns = @JoinColumn(name = "MaMB"))
+	@JoinTable(name = "chungnhan", joinColumns = @JoinColumn(name = "ma_nv"), inverseJoinColumns = @JoinColumn(name = "ma_mb"))
 	Set<MayBay> mayBayDuocLai;
 
 	public NhanVien() {

@@ -11,25 +11,25 @@ import javax.persistence.Table;
 @Table(name = "chuyenbay")
 public class ChuyenBay {
 	@Id
-	@Column(name = "MaCB", nullable = false)
+	@Column(name = "ma_cb", nullable = false)
 	private String ma;
 
-	@Column(name = "GaDi")
+	@Column(name = "ga_di")
 	private String gaDi;
 
-	@Column(name = "GaDen")
+	@Column(name = "ga_den")
 	private String gaDen;
 
-	@Column(name = "DoDai")
+	@Column(name = "do_dai")
 	private Integer doDai;
 
-	@Column(name = "GioDi")
+	@Column(name = "gio_di")
 	private Time gioDi;
 
-	@Column(name = "GioDen")
+	@Column(name = "gio_den")
 	private Time gioDen;
 
-	@Column(name = "ChiPhi")
+	@Column(name = "chi_phi")
 	private Integer chiPhi;
 
 	public ChuyenBay() {

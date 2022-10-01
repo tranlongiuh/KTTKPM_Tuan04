@@ -13,13 +13,13 @@ import javax.persistence.Table;
 public class MayBay {
 
 	@Id
-	@Column(name = "MaMB", nullable = false)
+	@Column(name = "ma_mb", nullable = false)
 	private Integer ma;
 
-	@Column(name = "Loai")
+	@Column(name = "loai")
 	private String loai;
 
-	@Column(name = "TamBay")
+	@Column(name = "tam_bay")
 	private Integer tamBay;
 
 	@ManyToMany(mappedBy = "mayBayDuocLai")
