@@ -16,4 +16,6 @@ public interface MayBayRepository extends JpaRepository<MayBay, Integer> {
 	
 	@Query(value = "SELECT * FROM maybay where do_dai > ?1 and do_dai < ?2", nativeQuery = true)
 	List<MayBay> findByTamBay(Integer tamBay1, Integer tamBay2);
+
+	List<MayBay> findAllByLoaiLike(String loai);
 }

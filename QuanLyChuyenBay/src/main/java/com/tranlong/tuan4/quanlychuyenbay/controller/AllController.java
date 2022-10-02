@@ -58,9 +58,18 @@ public class AllController {
 	public List<ChuyenBay> cau4(@PathVariable String gaDi, @PathVariable String gaDen) {
 		return chuyenBayService.getAllChuyenBay(gaDi, gaDen);
 	}
-//	5.	Cho biết các chuyến bay xuất phát từ Sài Gòn (SGN) đi Ban Mê Thuộc (BMV).
-//	6.	Có bao nhiêu chuyến bay xuất phát từ Sài Gòn (SGN).
-//	7.	Có bao nhiêu loại máy báy Boeing.
+
+	//	6.	Có bao nhiêu chuyến bay xuất phát từ Sài Gòn (SGN).
+	@GetMapping("/cau6/{gaDi}")
+	public List<ChuyenBay> cau6(@PathVariable String gaDi) {
+		return chuyenBayService.getAllChuyenBayByGaDi(gaDi);
+	}
+	
+	//	7.	Có bao nhiêu loại máy báy Boeing.
+	@GetMapping("/cau7/{loai}")
+	public List<MayBay> cau2(@PathVariable String loai) {
+		return mayBayService.getAllMayBayByLoai(loai);
+	}
 //	8.	Cho biết tổng số lương phải trả cho các nhân viên.
 //	9.	Cho biết mã số của các phi công lái máy báy Boeing.
 //	10.	Cho biết các nhân viên có thể lái máy bay có mã số 747.

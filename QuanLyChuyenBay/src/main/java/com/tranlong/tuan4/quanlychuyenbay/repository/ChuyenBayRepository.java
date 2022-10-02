@@ -18,4 +18,6 @@ public interface ChuyenBayRepository extends JpaRepository<ChuyenBay, String> {
 
 	@Query(value = "SELECT * FROM chuyenbay cb where cb.do_dai > ?1 and cb.do_dai < ?2", nativeQuery = true)
 	List<ChuyenBay> findByBetween(Integer doDai1, Integer doDai2);
+
+	List<ChuyenBay> findByGaDi(String gaDi);
 }

@@ -22,7 +22,6 @@ public class ChuyenBayService {
 			System.out.println("Khong tim thay diem den " + gaDen);
 		}
 		return result;
-
 	}
 
 	public List<ChuyenBay> getAllChuyenBay(String gaDi, String gaDen) {
@@ -37,6 +36,16 @@ public class ChuyenBayService {
 		List<ChuyenBay> result = null;
 		if (doDai1 != null && doDai1 > 0 && doDai2 != null && doDai2 > doDai1) {
 			result = repository.findByBetween(doDai1, doDai2);
+		}
+		return result;
+	}
+
+	public List<ChuyenBay> getAllChuyenBayByGaDi(String gaDi) {
+		List<ChuyenBay> result = null;
+		if (gaDi != null && gaDi.length() > 0) {
+			result = repository.findByGaDi(gaDi);
+		} else {
+			System.out.println("Khong tim thay diem den " + gaDi);
 		}
 		return result;
 	}
