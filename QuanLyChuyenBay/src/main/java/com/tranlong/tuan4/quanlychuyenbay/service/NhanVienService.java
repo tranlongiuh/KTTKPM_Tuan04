@@ -21,6 +21,12 @@ public class NhanVienService {
 		}
 		return result;
 	}
+
+	public Integer getSumSalary() {
+		Integer rs = 0;
+		rs = repository.sumLuong();
+		return rs;
+	}
 	
 	
 }

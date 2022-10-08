@@ -55,7 +55,7 @@ public class AllController {
 
 	// 5. Cho biết các chuyến bay xuất phát từ Sài Gòn (SGN) đi Ban Mê Thuộc (BMV).
 	@GetMapping("/cau5/{gaDi}/{gaDen}")
-	public List<ChuyenBay> cau4(@PathVariable String gaDi, @PathVariable String gaDen) {
+	public List<ChuyenBay> cau5(@PathVariable String gaDi, @PathVariable String gaDen) {
 		return chuyenBayService.getAllChuyenBay(gaDi, gaDen);
 	}
 
@@ -67,10 +67,14 @@ public class AllController {
 	
 	//	7.	Có bao nhiêu loại máy báy Boeing.
 	@GetMapping("/cau7/{loai}")
-	public List<MayBay> cau2(@PathVariable String loai) {
+	public List<MayBay> cau7(@PathVariable String loai) {
 		return mayBayService.getAllMayBayByLoai(loai);
 	}
-//	8.	Cho biết tổng số lương phải trả cho các nhân viên.
+	//	8.	Cho biết tổng số lương phải trả cho các nhân viên.
+	@GetMapping("/cau8")
+	public Integer cau8() {
+		return nhanVienService.getSumSalary();
+	}
 //	9.	Cho biết mã số của các phi công lái máy báy Boeing.
 //	10.	Cho biết các nhân viên có thể lái máy bay có mã số 747.
 //	11.	Cho biết mã số của các loại máy bay mà nhân viên có họ Nguyễn có thể lái.
