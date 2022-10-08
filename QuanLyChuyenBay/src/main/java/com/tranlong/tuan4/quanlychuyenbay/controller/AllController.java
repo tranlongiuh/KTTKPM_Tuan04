@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tranlong.tuan4.quanlychuyenbay.entity.ChuyenBay;
 import com.tranlong.tuan4.quanlychuyenbay.entity.MayBay;
 import com.tranlong.tuan4.quanlychuyenbay.entity.NhanVien;
+import com.tranlong.tuan4.quanlychuyenbay.service.ChungNhanService;
 import com.tranlong.tuan4.quanlychuyenbay.service.ChuyenBayService;
 import com.tranlong.tuan4.quanlychuyenbay.service.MayBayService;
 import com.tranlong.tuan4.quanlychuyenbay.service.NhanVienService;
@@ -27,6 +28,9 @@ public class AllController {
 
 	@Autowired
 	NhanVienService nhanVienService;
+	
+	@Autowired
+	ChungNhanService chungNhanService;
 
 	// 1. Cho biết các chuyến bay đi Đà Lạt (DAD).
 	@GetMapping("/cau1/{gaDen}")
@@ -75,7 +79,11 @@ public class AllController {
 	public Integer cau8() {
 		return nhanVienService.getSumSalary();
 	}
-//	9.	Cho biết mã số của các phi công lái máy báy Boeing.
+	//	9.	Cho biết mã số của các phi công lái máy báy Boeing.
+	@GetMapping("/cau9/{loai}")
+	public List<String> cau9(@PathVariable String loai) {
+		return chungNhanService.getMaNhanVienByLoaiMB(loai);
+	}
 //	10.	Cho biết các nhân viên có thể lái máy bay có mã số 747.
 //	11.	Cho biết mã số của các loại máy bay mà nhân viên có họ Nguyễn có thể lái.
 //	12.	Cho biết mã số của các phi công vừa lái được Boeing vừa lái được Airbus.

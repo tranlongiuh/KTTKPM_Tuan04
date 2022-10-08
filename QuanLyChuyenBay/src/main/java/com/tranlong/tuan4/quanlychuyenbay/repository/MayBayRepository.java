@@ -18,4 +18,6 @@ public interface MayBayRepository extends JpaRepository<MayBay, Integer> {
 	List<MayBay> findByTamBay(Integer tamBay1, Integer tamBay2);
 
 	List<MayBay> findAllByLoaiLike(String loai);
+
+	
 }
